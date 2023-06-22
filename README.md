@@ -29,7 +29,7 @@ This script adds a **Token Counter** element that appears in the bottom part of 
 
 ## Detailed Explanation
 
-***(Note. Read this is only if you are curious to know a bit more about token counting and if you want to try some variations that I have uploaded as well.)***
+***(Note. Read this is only if you are curious to know a bit more about the token counting function, and if you want to try some variations that I have uploaded as well.)***
 
 Ok, so as you know, Token Counting is complex and there is not a single method of counting that is reliable, and even **ChatGPT** uses different methods for their **GPT 3.5** and **GPT 4** models. But let us take into account this words from [OpenAi](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) themselves.
 
@@ -102,18 +102,25 @@ We see that here our complex counter was closer to the correct answer, it has th
 
 So after a lot of thought I ultimately decided to upload my first version of the script, the **"Simple Counter"** as the main version instead of the **"Tiktoken"** one, not only is it way lighter but I feel it's more useful all-around.
 
+**TL;DR**
 
-
-
-So long story short, here are the results based on OpenAi's examples.
-
+Use the main version if you want something light and simple, use the Tiktoken version inside the variations folder if you want something heavier and super precise and you mainly use text, not code.
 
 ## Variations
 
-Follow the same steps as the instructions above if you want to try these out.
+Follow the same steps as the instructions above if you want to try these out. 
 
-1) **Tiktoken Counter V1.** Open the [RAW](link) code.
-2) **Merged Counters V1.** If you want to have fun comparing them both at the same time. Open the [RAW](link).
+-----
+**WARNING: THESE ARE 100K LINES OF CODE EACH, IT MIGHT CRASH YOUR BROWSER JUST TO LOAD THE PAGES, I RECOMMEND DOWNLADING A ZIP OF THE REPO INSTEAD AND THEN IMPORTING THOSE FILES MANUALLY TO YOUR TAMPERMONKEY.**
+-
+
+1) **Tiktoken Counter V1.** Open the [RAW](https://github.com/SpriteSixis/Token-Counter-for-ChatGPT/blob/main/variations/TikToken%20Counter%20V1.user.js) code.
+2) **Merged Counters V1.** If you want to use both. Open the [RAW](https://github.com/SpriteSixis/Token-Counter-for-ChatGPT/blob/main/variations/Merged%20Token%20Counters%20V1.user.js) code.
+
+**WARNING: THESE ARE 100K LINES OF CODE EACH, IT MIGHT CRASH YOUR BROWSER JUST TO LOAD THE PAGES, I RECOMMEND DOWNLADING A ZIP OF THE REPO INSTEAD AND THEN IMPORTING THOSE FILES MANUALLY TO YOUR TAMPERMONKEY.**
+-
+
+-----
 
 ## Browser Compatibility
 
