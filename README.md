@@ -1,5 +1,5 @@
 # Token-Counter-for-ChatGPT
-A simple Tampermonkey Script that counts tokens in ChatGPT's interface.
+A simple **Tampermonkey** Script that counts tokens in **ChatGPT's** interface.
 
 ## Token Counter
 
@@ -29,6 +29,8 @@ This script adds a **Token Counter** element that appears in the bottom part of 
 
 ## Detailed Explanation
 
+***(Note. Read this is only if you are curious to know a bit more about token counting and if you want to try some variations that I have uploaded as well.)***
+
 Ok, so as you know, Token Counting is complex and there is not a single method of counting that is reliable, and even **ChatGPT** uses different methods for their **GPT 3.5** and **GPT 4** models. But let us take into account this words from [OpenAi](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) themselves.
 
 <pre>
@@ -54,7 +56,9 @@ To get additional context on how tokens stack up, consider this:
 - The transcript of the US Declaration of Independence contains 1,695 tokens.
 </pre>
 
-So with this in mind, my goal was to create a really simple **Token Counter** script that would let you have an approximation with an acceptable margin of error, mainly to stop wasting time trying to guess if my large pasted prompts would fit or not.
+So with this in mind, my goal was to create a really simple **Token Counter** script that would let you have an approximation with an acceptable margin of error, mainly to stop wasting time trying to guess if my large pasted prompts would fit or not. It seemed like it worked great until I tried the `"Cómo estás"` example. 
+
+![Como estas](./assets/03a.png)
 
 So long story short, here are the results based on OpenAi's examples.
 
