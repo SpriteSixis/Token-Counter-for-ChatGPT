@@ -7,7 +7,7 @@ This is a simple coding exercise that I wanted to try because I was getting tire
 
 ## Quick Start
 
-Make sure you have **[Tampermonkey](https://www.tampermonkey.net)** installed in your browser, open `Token Counter.user.js` in [RAW](https://github.com/SpriteSixis/Token-Counter-for-ChatGPT/raw/main/Token%20Counter.user.js) view and **Tampermonkey** should recognize it and give you the option of installing it, then just click on the extension so that you make sure that the script is enabled, and finally refresh your browser. 
+Make sure you have **[Tampermonkey](https://www.tampermonkey.net)** installed in your browser, open `Token Counter.user.js` in [RAW](https://github.com/SpriteSixis/Token-Counter-for-ChatGPT/blob/main/Token%20Counter.user.js) view and **Tampermonkey** should recognize it and give you the option of installing it, then just click on the extension so that you make sure that the script is enabled, and finally refresh your browser. 
 
 ## Basic Explanation
 
@@ -18,7 +18,7 @@ This script adds a **Token Counter** element that appears in the bottom part of 
 **Quickest**
 
 1) Install **Tampermonkey** on your browser. *(I haven't tried other browser or extensions, I will do more testing on this and update it.)*
-2) Open `Token Counter.user.js` in [RAW](https://github.com/SpriteSixis/Token-Counter-for-ChatGPT/raw/main/Token%20Counter.user.js) view and **Tampermonkey** should recognize it, click **"Install"**.
+2) Open `Token Counter.user.js` in [RAW](https://github.com/SpriteSixis/Token-Counter-for-ChatGPT/blob/main/Token%20Counter.user.js) view and **Tampermonkey** should recognize it, click **"Install"**.
 3) Make sure the script is activated on the **Tampermonkey** extension.
 
 **Alternatives**
@@ -58,18 +58,62 @@ To get additional context on how tokens stack up, consider this:
 
 So with this in mind, my goal was to create a really simple **Token Counter** script that would let you have an approximation with an acceptable margin of error, mainly to stop wasting time trying to guess if my large pasted prompts would fit or not. It seemed like it worked great until I tried the `"Cómo estás"` example. 
 
-![Como estas](./assets/03a.png)
+![Como estas old](./assets/03a.png)
+
+As you can see, it only counts **"2" Tokens**. So to make a long story short, I researched a bit about Token encoding and found [tiktoken](https://github.com/openai/tiktoken/tree/main) and a [GPT-3-Encoder](https://github.com/latitudegames/GPT-3-Encoder) code that I could try to adapt for fun into a new Tampermonkey Script. And this was the result:
+
+![Como estas new](./assets/03c.png)
+
+So as you can see, it worked, it has a peculiar way of counting, totally different from the Simpler method, however most of the time they arrive at the same result. 
+
+Here is an example of both of them in action.
+
+![Gif in action](./assets/11.gif)
+
+*(From now on, all the images you see will be using another variaton of the Script I made which displays both counters at the same time for clarity.)*
+
+So you would think that was it, I should just use the **TikToken** method and discard the old one, right? Well... no, unfortunately this uses GPT 2 encoding for counting tokens so it does not work well at all when you paste code. 
+
+![Code Example Chat](./assets/04.png)
+
+As you can see the complex counting method goes crazy high, an amount that GPT would never handle but the simpler counting method says that the number is much lower, so which should we trust? Well, we can use [this](https://huggingface.co/spaces/JacobLinCool/tiktoken-calculator) **HuggingFace** tool to help us find out. 
+
+![Code Example Chat](./assets/05mod.png)
+
+As you can see the **"Simple Counter"** is much closer to the `cl100k_base` encoder that GPT 4 uses, while the **"Complex Counter"** is pretty much right on the money with `gpt2` as it's supposed to be.
+
+Finally, here is the result of the comparison with the US Declaration of Independece.
+
+![Code Example Chat](./assets/02.png)
+
+The **"Complex Counter"** is this time again, pretty much right on the money, while the **"Simple Counter"** lagged a bit behind, but still it was not that bad. 
+
+**Where does it fail?**
+
+I need to mention that this was mainly made for English characters, as you can see, even in Spanish there is quite a bit of difference. I tried an example with Chinese characters and this is the result.
+
+![Code Example Chat](./assets/08.png)
+
+The difference between the two is wild. If we check it on **HuggingFace**:
+
+![Code Example Chat](./assets/09mod.png)
+
+We see that here our complex counter was closer to the correct answer, it has the same result as the GPT 3 encoder. 
+
+So after a lot of thought I ultimately decided to upload my first version of the script, the **"Simple Counter"** as the main version instead of the **"Tiktoken"** one, not only is it way lighter but I feel it's more useful all-around.
+
+
+
 
 So long story short, here are the results based on OpenAi's examples.
-
 
 
 ## Variations
 
 Follow the same steps as the instructions above if you want to try these out.
 
-1) **Tiktoken Counter V1.** Here is the [RAW](link) code.
-2) **Merged Counters V1.** If you want to have fun comparing them both at the same time. [RAW](link).
+1) **Tiktoken Counter V1.** Open the [RAW](link) code.
+2) **Merged Counters V1.** If you want to have fun comparing them both at the same time. Open the [RAW](link).
 
 ## Browser Compatibility
 
