@@ -7,7 +7,7 @@ This is a simple coding exercise that I wanted to try because I was getting tire
 
 ## Quick Start
 
-Make sure you have **[Tampermonkey](https://www.tampermonkey.net)** installed in your browser, open `Token Counter.user.js` in [RAW](link) view and **Tampermonkey** should recognize it and give you the option of installing it, then just click the extension so that you make sure that the script is enabled, and finally refresh your browser. 
+Make sure you have **[Tampermonkey](https://www.tampermonkey.net)** installed in your browser, open `Token Counter.user.js` in [RAW](https://github.com/SpriteSixis/Token-Counter-for-ChatGPT/raw/main/Token%20Counter.user.js) view and **Tampermonkey** should recognize it and give you the option of installing it, then just click on the extension so that you make sure that the script is enabled, and finally refresh your browser. 
 
 ## Basic Explanation
 
@@ -18,13 +18,13 @@ This script adds a **Token Counter** element that appears in the bottom part of 
 **Quickest**
 
 1) Install **Tampermonkey** on your browser. *(I haven't tried other browser or extensions, I will do more testing on this and update it.)*
-2) Open `Token Counter.user.js` in [RAW](link) view and **Tampermonkey** should recognize it, click **"Install"**.
+2) Open `Token Counter.user.js` in [RAW](https://github.com/SpriteSixis/Token-Counter-for-ChatGPT/raw/main/Token%20Counter.user.js) view and **Tampermonkey** should recognize it, click **"Install"**.
 3) Make sure the script is activated on the **Tampermonkey** extension.
 
 **Alternatives**
 
 1) In the **"Utilites"** tab of the **Tampermonkey** dashboard, just paste this link in the **"Install from URL"** textbox.
-2) Download the  `Token Counter.user.js` script from above and select the **"Import from file"** option in the **Tampermonkey "Utilites"** tab.
+2) Download the  `Token Counter.user.js` [script](https://github.com/SpriteSixis/Token-Counter-for-ChatGPT/blob/main/Token%20Counter.user.js) from above and select the **"Import from file"** option in the **Tampermonkey "Utilites"** tab.
 3) Alternatively you can just click on the `+` sign in the **Tampermonkey Dashboard** to create a **New File**, then open `Token Counter.user.js` script on this repo and copy all of its contents and paste them into the **New File** you created and **Save** it. 
 
 ## Detailed Explanation
@@ -54,7 +54,11 @@ To get additional context on how tokens stack up, consider this:
 - The transcript of the US Declaration of Independence contains 1,695 tokens.
 </pre>
 
-So with this in mind, my goal was to create a really simple **Token Counter** script that would let you have an approximation with an acceptable margin of error.
+So with this in mind, my goal was to create a really simple **Token Counter** script that would let you have an approximation with an acceptable margin of error, mainly to stop wasting time trying to guess if my large pasted prompts would fit or not.
+
+So long story short, here are the results based on OpenAi's examples.
+
+
 
 ## Variations
 
