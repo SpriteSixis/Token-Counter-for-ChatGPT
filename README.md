@@ -86,7 +86,7 @@ Finally, here is the result of the comparison with the US Declaration of Indepen
 
 ![Code Example Chat](./assets/02.png)
 
-The **"Complex Counter"** is this time again, pretty much right on the money, while the **"Simple Counter"** lagged a bit behind, but still it was not that bad. 
+The **"Complex Counter"** is again, pretty much right on the money, while the **"Simple Counter"** lagged a bit behind, but still it was not that bad. 
 
 **Where does it fail?**
 
